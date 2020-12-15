@@ -5,12 +5,19 @@
 {% endblock %}
 
 {% block body %}
-    <h1>All Pages</h1>
+    <h1>New Wiki Page</h1>
 
-    <ul>
-        {% for entry in entries %}
-            <li>{{ entry }}</li>
-        {% endfor %}
-    </ul>
+        <label >Title:</label>
+        <br>
+        <textarea placeholder="Title" form="new_content_form" name="new_content_title"   style="height:5%;width:80%;"></textarea>
+        <br>
+        <label >New content:</label>
+        <br>
+        <textarea placeholder="Content text"  form="new_content_form" name="new_content" style="height:45%;width:80%;"></textarea>
+
+        <form action="" method="post" id="new_content_form">
+          {%csrf_token%}
+           <input type="submit" />
+        </form>
 
 {% endblock %}
