@@ -1,23 +1,19 @@
 {% extends "encyclopedia/layout.html" %}
-
+{% load crispy_forms_tags %}
 {% block title %}
     Encyclopedia New Page
 {% endblock %}
 
 {% block body %}
     <h1>New Wiki Page</h1>
-
-        <label >Title:</label>
-        <br>
-        <textarea placeholder="Title" form="new_content_form" name="new_content_title"   style="height:5%;width:80%;"></textarea>
-        <br>
-        <label >New content:</label>
-        <br>
-        <textarea placeholder="Content text"  form="new_content_form" name="new_content" style="height:45%;width:80%;"></textarea>
-
-        <form action="" method="post" id="new_content_form">
-          {%csrf_token%}
-           <input type="submit" />
-        </form>
+    <div class="content-section">
+      <form method="post">
+        {%csrf_token%}
+      <!--  <fieldset class = "form-group"> -->
+           {{form|crispy}}
+           <input type="submit">
+      <!--  </fieldset>  -->
+      </form>
+    </div>
 
 {% endblock %}

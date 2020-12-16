@@ -17,6 +17,13 @@ textarea {
   height:30vh;
 }
 
+.form-group {
+margin-right: 15px;
+padding-right: 10px;
+background-color: yellow;
+
+}
+
 .main {
     padding: 10px;
 }
