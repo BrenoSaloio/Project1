@@ -1,4 +1,5 @@
 {% extends "encyclopedia/layout.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %}
     Encyclopedia
@@ -6,10 +7,12 @@
 
 {% block body %}
     <h1>All Pages</h1>
-
-    <ul>
+    <br>
+    <ul class="list-group list-group-flush">
         {% for entry in entries %}
-            <li>{{ entry }}</li>
+            <li class="list-group-item" style="margin-right:40px">
+            <a href="{% url 'topic' entry %}">{{ entry }}</a>
+            </li>
         {% endfor %}
     </ul>
 

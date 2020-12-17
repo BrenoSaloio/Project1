@@ -1,4 +1,5 @@
 {% load static %}
+{% load crispy_forms_tags %}
 
 <!DOCTYPE html>
 
@@ -6,16 +7,28 @@
     <head>
         <title>{% block title %}{% endblock %}</title>
 
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">      
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
         <link href="{% static 'encyclopedia/styles.css' %}" rel="stylesheet">
     </head>
     <body>
         <div class="row">
             <div class="sidebar col-lg-2 col-md-3">
                 <h2>Wiki</h2>
-                <form>
-                    <input class="search" type="text" name="q" placeholder="Search Encyclopedia">
+                <form >
+                    <input  class="textinput textInput form-control" type="text" name="q" placeholder="Search Encyclopedia">
+
+                    <input  class="btn btn-outline-dark" type="submit" value="Search" style="margin-top:10px">
+
                 </form>
+                  <br>
+                  <ul class="list-group list-group-flush">
+
+                      <li class="list-group-item" style="background-color: #f0f0f0 ">   <a href="{% url 'index' %}">Home</a> </li>
+                      <li class="list-group-item" style="background-color: #f0f0f0 ">   <a href="{% url 'new_page' %}">Create New Page</a> </li>
+                      <li class="list-group-item" style="background-color: #f0f0f0 ">  <a href="{% url 'new_page' %}">Random Page</a> </li>
+
+                  </ul>
+                  <!--
                 <div>
                     <a href="{% url 'index' %}">Home</a>
                 </div>
@@ -25,6 +38,7 @@
                 <div>
                     Random Page
                 </div>
+                -->
                 {% block nav %}
                 {% endblock %}
             </div>

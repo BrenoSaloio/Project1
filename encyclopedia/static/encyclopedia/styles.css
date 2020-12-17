@@ -10,6 +10,9 @@ code {
 h1 {
     margin-top: 0px;
     padding-top: 20px;
+    border-bottom: 1px solid;
+    margin-bottom: -1px;
+    margin-right: 40px;
 }
 
 textarea {
@@ -18,9 +21,8 @@ textarea {
 }
 
 .form-group {
-margin-right: 15px;
+margin-right: 30px;
 padding-right: 10px;
-background-color: yellow;
 
 }
 
@@ -38,6 +40,7 @@ background-color: yellow;
     background-color: #f0f0f0;
     height: 100vh;
     padding: 20px;
+
 }
 
 .sidebar h2 {

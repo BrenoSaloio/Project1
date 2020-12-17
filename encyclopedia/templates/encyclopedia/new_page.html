@@ -6,13 +6,14 @@
 
 {% block body %}
     <h1>New Wiki Page</h1>
+    <br>
     <div class="content-section">
-      <form method="post">
-        {%csrf_token%}
-      <!--  <fieldset class = "form-group"> -->
+      <form action="/wiki/new_page" method="post">
+           {%csrf_token%}
+
            {{form|crispy}}
            <input type="submit">
-      <!--  </fieldset>  -->
+
       </form>
     </div>
 

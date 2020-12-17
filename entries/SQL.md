@@ -1,0 +1,1 @@
+SQL stands for Structured Query Language and it is used in Data Bases.
